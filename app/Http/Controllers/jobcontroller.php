@@ -78,7 +78,7 @@ class jobcontroller extends Controller
 
         $job->update($formFields);
 
-        return redirect('jobs.edit')->with('message', 'Listing updated successfully!');
+        return redirect('/job/manage')->with('message', 'Listing updated successfully!');
     }
 
     public Function redirect(){

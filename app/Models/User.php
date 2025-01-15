@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\cv;
 use App\Models\job;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -48,5 +49,8 @@ class User extends Authenticatable
     }
     public function job(){
         return $this->hasMany(job::class,'user_id');
+    }
+    public function cv(){
+        return $this->hasMany(cv::class,'user_id');
     }
 }

@@ -7,10 +7,7 @@
             <h6></h6>
             <h2>Manage your listings</h2>
           </div>
-        </div>
-       
-       
-        
+        </div> 
       </div>
     </div>
   </div>
@@ -19,7 +16,7 @@
     <section >
   <div class=" px-4 mx-auto max-w-2xl lg:py-16">
       <h1 class="mb-20  ml-60 text-xl font-bold text-slate-600 ">Edit your job</h1>
-      <form action="/{{$job->id}}/update" method="POST" enctype="multipart/form-data">
+      <form action="{{route('jobs.update',$job)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
           <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
