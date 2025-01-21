@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('logo')->nullable();
             $table->string('category');
+            $table->bigint('salary');
             $table->string('company');
             $table->string('location');
             $table->string('email');
@@ -24,10 +25,19 @@ return new class extends Migration
             $table->longText('description');
             $table->timestamps();
         });
-
         
 
         
+
+        
+    }
+
+
+    public function add()
+    {
+        Schema::table('jobs', function (Blueprint $table) {
+            $table->bigInteger('salary')->after('category')->nullable();
+        });
     }
 
     /**

@@ -50,11 +50,9 @@
                 @enderror
                 </div>
                 <div class="w-full">
-                  <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Salary (not required) </label>
+                  <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Salary (not required) / year </label>
                   <input type="number" value="{{old('salary')}}" name="salary" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder=" ex: $2999" >
-                  @error('title')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                @enderror
+                 
                 </div>
               <div>
                   <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">Remote</label>
@@ -99,56 +97,6 @@
   </div>
 </section>
 
-      <!-- <div class="row">
-        <div class="col-lg-12">
-          <div class="inner-content">
-            <div class="row" >
-              <div class="col-lg-6">
-                
-<form class="max-w-lg mx-auto">
-  <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Upload file</label>
-  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" aria-describedby="user_avatar_help" id="user_avatar" type="file">
-  <div class="mt-1 text-sm text-gray-500" id="user_avatar_help">A profile picture is useful to confirm your are logged into your account</div>
-</form>
-
-              </div>
-              <div class="col-lg-6 align-self-center">
-                
-                <form id="contact" action="" method="get">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <fieldset>
-                        <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-6">
-                      <fieldset>
-                        <input type="surname" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-                      </fieldset>
-                    </div>
-                    
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>  
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane"></i> Send Message</button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 

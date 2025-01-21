@@ -17,6 +17,7 @@ class job extends Model
         'company', 
         'location', 
         'website', 
+        'salary',
         'email', 
         'description',
         'category',

@@ -7,6 +7,7 @@ use App\Http\Controllers\usercontroller;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function (){
+
     Route::get('/edit/{cv}',[cvcontroller::class,'edit'])->name('cv.edit');
     Route::get('/singlejob/{job}',[jobcontroller::class,'show'])->name('jobs.show');
     Route::get('/singlejob/{job}/edit',[jobcontroller::class,'edit'])->name('jobs.edit');
@@ -21,9 +22,11 @@ Route::middleware('auth')->group(function (){
     Route::get('/user/edit',[usercontroller::class,'edit']);
     Route::put('/{cv}/replace',[cvcontroller::class,'replace'])->name('cv.replace');
     Route::delete('/{cv}/delete',[cvcontroller::class,'destroy'])->name('cv.delete');
+    Route::post('/jobs/{job}/apply', [jobcontroller::class, 'apply'])->name('jobs.apply');
+    Route::get('/email',[jobcontroller::class,'email'])->name('email');
     
-
 });
+    
 
 
 Route::get('/',[jobcontroller::class,'index']);

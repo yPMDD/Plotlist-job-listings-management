@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\job;
 use App\Models\User;
+use App\Mail\JobApplication;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 
@@ -40,6 +42,7 @@ class jobcontroller extends Controller
             'company' => ['required', Rule::unique('jobs', 'company')],
             'location' => 'required',
             'website' => 'required',
+            'salary',
             'category'=>'required',
             'email' => ['required', 'email'],
             'description' => 'required'
@@ -67,6 +70,7 @@ class jobcontroller extends Controller
             'company' => ['required'],
             'location' => 'required',
             'website' => 'required',
+            'salary' => 'nullable' ,
             'email' => ['required', 'email'],
             'category' => 'required',
             'description' => 'required'
@@ -98,6 +102,22 @@ class jobcontroller extends Controller
         return redirect('/')->with('message', 'Listing deleted successfully');
     }
 
+    public function apply(job $job){
+        $user = auth()->user();
+
+        // Ensure the user has a resume
+        if (!$user->cv) {
+            return redirect()->back()->with('error', 'You need to upload a resume to apply for this job.');
+        }
+
+        // Send the resume to the job's email
+        Mail::to($job->email)->send(new JobApplication($user, $job));
+
+        return redirect()->back()->with('success', 'Your resume has been sent successfully!');
+    }
+    public function email(){
+        return view('emails.email');
+    }
 }
 
 

@@ -12,12 +12,11 @@
                       <h6>by: {{$job->company}}</h6>
                       
                       <span class="price"><div class="icon"><img src="{{asset('assets/images/listing-icon-01.png')}}" alt=""></div>
-                        @unless(!$job->is_null)  
+                        @if($job->salary > 0)  
                         <span>${{$job->salary}}</span>
-                      
                         @else
                         <span>To discuss after</span>
-                        @endunless
+                        @endif
 
                     
                     </span>
@@ -27,10 +26,14 @@
                         <li><img src="{{asset('assets/images/listing-icon-03.png')}}" alt=""> 2 days ago</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="{{ route('jobs.show', $job) }}"><i class="fa fa-eye"></i> Contact Now</a>
+                      <form action="{{ route('jobs.apply', $job) }}" method="POST">
+                          @csrf
+                          <button type="submit" class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded">Apply Now</button>
+                      </form>
                       </div>
                     </div>
                   </div>
                 </div>
                 
+              
               
