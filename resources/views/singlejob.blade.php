@@ -22,6 +22,7 @@
 
         <h3 class="text-2xl mb-2">
          Job Title : {{$job->title}}
+         
         </h3>
         <div class="text-xl font-bold mb-4">Company name : {{$job->company}}</div>
 

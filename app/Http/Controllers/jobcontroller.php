@@ -37,6 +37,7 @@ class jobcontroller extends Controller
     }
 
     public function store(Request $request){
+        
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required', Rule::unique('jobs', 'company')],

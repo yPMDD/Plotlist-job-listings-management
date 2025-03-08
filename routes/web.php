@@ -7,7 +7,7 @@ use App\Http\Controllers\usercontroller;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function (){
-
+    
     Route::get('/edit/{cv}',[cvcontroller::class,'edit'])->name('cv.edit');
     Route::get('/singlejob/{job}',[jobcontroller::class,'show'])->name('jobs.show');
     Route::get('/singlejob/{job}/edit',[jobcontroller::class,'edit'])->name('jobs.edit');
