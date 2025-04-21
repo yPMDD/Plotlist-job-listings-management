@@ -1,5 +1,8 @@
 * text=auto eol=lf
-
+* linguist-language=PHP
+*.js linguist-vendored
+*.json linguist-vendored
+*.css linguist-vendored
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
