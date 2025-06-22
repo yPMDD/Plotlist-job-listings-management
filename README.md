@@ -37,13 +37,7 @@ Built with **Laravel**, **MySQL**, **Tailwind**, **Bootstrap**, and **Alpine.js*
 ## 📸 Demo Screenshots
 
 ### 🏠 Homepage
-![Homepage](./assets/homepage.png)
-
-### 📂 Listings Page
-![Listings](./assets/listings.png)
-
-### 🧾 Apply Form
-![Apply Form](./assets/apply.png)
+![Homepage](./public/assets/images/homepage.png)
 
 ---
 
